@@ -25,11 +25,6 @@ def validarONivelInseridoPeloUsuario(nivel):
         selecionarAsListasDePalavrasParaOJogo(nivel)
 
 def selecionarAsListasDePalavrasParaOJogo(nivel):
-    '''
-    A Lista de Palavras a serem carregadas vai depender do nivel
-    '''
-    palavrasSorteadas = []
-
     if(nivel == '1'):
         from ConjuntoDePalavrasParaOJogo import PalavrasCom4Letras, PalavrasCom5Letras
         
