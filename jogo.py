@@ -70,20 +70,20 @@ from random import choice
 
 numeroDeDerrotas = 0
 numeroDeVitorias = 0
-tot = 1
+totalDeJogadas = 1
 telaDeInicio()
 
 if __name__ == '__main__':
     while True:
         palavraSorteada = choice(palavrasSorteadasParaOJogo)
-        print(f'{tot}º Jogada', '-*-'*20)
+        print(f'{totalDeJogadas}º Jogada', '-*-'*20)
         print(f'\033[40;35;1mACERTOS: {numeroDeVitorias}\033[m\n\033[31;40;1mFALHAS: {numeroDeDerrotas}\033[m')
         print(f'Palavras: {palavrasSorteadasParaOJogo}')
         print('_'*35)
         print(f'Pista: A palavra sorteado tem \033[31;40;1m{len(palavraSorteada)} letras\033[m')
         print('-'*50)
         palavraInseridaPeloUsuario = input('Palavra: ')
-        tot += 1
+        totalDeJogadas += 1
         if str(palavraInseridaPeloUsuario).strip().lower() == palavraSorteada:
             print('\033[32;40;1mACERTOU')
             numeroDeVitorias += 1
