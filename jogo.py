@@ -92,6 +92,6 @@ if __name__ == '__main__':
             break
         numeroDeDerrotas += 1
         print('\033[31;40;1mERRADO!!!!')
-        print(f'Palavra: {palavraSorteada}')
+        print(f'Palavra Sorteada: {palavraSorteada}')
 
 
