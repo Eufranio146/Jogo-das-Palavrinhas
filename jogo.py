@@ -1,3 +1,5 @@
+from random import choice
+
 palavrasSorteadasParaOJogo = None
 
 def telaDeInicio():
@@ -38,26 +40,21 @@ def selecionarAsListasDePalavrasParaOJogo(nivel):
         
         gerarAListaDePalavrasSorteadas(PalavrasCom6Letras, PalavrasCom8Letras)
 
-
-def gerarAListaDePalavrasSorteadas(lista1Palavras, lista2Palavras):
-    from random import choice
+def sorteadorDePalavrasParaOJogo(listaDePalavras):
     global palavrasSorteadasParaOJogo
+    
     quantPalavrasSorteadas = 0
-    palavrasSorteadas = []
-
-    while quantPalavrasSorteadas < 6:
-        if quantPalavrasSorteadas < 3:
+    
+    while quantPalavrasSorteadas < 3:
             palavraSorteada = choice(lista1Palavras)
             if not palavraSorteada in palavrasSorteadas:
-                palavrasSorteadas.append(palavraSorteada)
+                palavrasSorteadasParaOJogo.append(palavraSorteada)
                 quantPalavrasSorteadas += 1
-        else:
-            palavraSorteada = choice(lista2Palavras)
-            if not palavraSorteada in palavrasSorteadas:
-                palavrasSorteadas.append(palavraSorteada)
-                quantPalavrasSorteadas += 1
-    
-    palavrasSorteadasParaOJogo = palavrasSorteadas
+                
+             
+def gerarAListaDePalavrasSorteadas(lista1Palavras, lista2Palavras):
+    sorteadorDePalavrasParaOJogo(lista1Palavras)
+    sorteadorDePalavrasParaOJogo(lista2Palavras)
 
 
 def carregarNomes(nivel = 1):
@@ -66,7 +63,6 @@ def carregarNomes(nivel = 1):
 
 
 
-from random import choice
 
 numeroDeDerrotas = 0
 numeroDeVitorias = 0
@@ -80,7 +76,7 @@ if __name__ == '__main__':
         print(f'\033[40;35;1mACERTOS: {numeroDeVitorias}\033[m\n\033[31;40;1mFALHAS: {numeroDeDerrotas}\033[m')
         print(f'Palavras: {palavrasSorteadasParaOJogo}')
         print('_'*35)
-        print(f'Pista: A palavra sorteado tem \033[31;40;1m{len(palavraSorteada)} letras\033[m')
+        print(f'Dica: A palavra sorteado tem \033[31;40;1m{len(palavraSorteada)} letras\033[m')
         print('-'*50)
         palavraInseridaPeloUsuario = input('Palavra: ')
         totalDeJogadas += 1
