@@ -32,12 +32,15 @@ def selecionarAsListasDePalavrasParaOJogo(nivel):
 
     if(nivel == '1'):
         from ConjuntoDePalavrasParaOJogo import PalavrasCom4Letras, PalavrasCom5Letras
+        
         gerarAListaDePalavrasSorteadas(PalavrasCom4Letras, PalavrasCom5Letras)
     elif(nivel == '2'):
         from ConjuntoDePalavrasParaOJogo import PalavrasCom5Letras, PalavrasCom6Letras
+        
         gerarAListaDePalavrasSorteadas(PalavrasCom5Letras, PalavrasCom6Letras)
     elif(nivel == '3'):
         from ConjuntoDePalavrasParaOJogo import PalavrasCom6Letras, PalavrasCom8Letras
+        
         gerarAListaDePalavrasSorteadas(PalavrasCom6Letras, PalavrasCom8Letras)
 
 
